@@ -311,6 +311,8 @@ mod_pnl_sim_server <- function(id, scrm_inputs, band_mode, app_session){
               flt_speed_pars = inflight_ftrs$fl_speed,
               body_lt_pars = biom_ftrs$body_lt,
               wing_span_pars = biom_ftrs$wing_span,
+              macro_avoid_pars = inflight_ftrs$macro_avoid,
+              meso_avoid_pars = inflight_ftrs$meso_avoid,
               avoid_bsc_pars = inflight_ftrs$avoid_bsc,
               avoid_ext_pars = inflight_ftrs$avoid_ext,
               noct_act_pars = inflight_ftrs$nct_act,

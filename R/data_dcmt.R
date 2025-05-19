@@ -47,10 +47,14 @@
 #'   and sd of flight speed (m/s).}
 #'   \item{nct_act}{A list-column of nested data frames with the mean
 #'   and sd of nocturnal activity.}
+#'   \item{macro_avoid}{A list-column of nested data frames with the mean
+#'   and sd of macro-avoidance probability.}
+#'   \item{meso_avoid}{A list-column of nested data frames with the mean
+#'   and sd of meso-avoidance probability.}
 #'   \item{avoid_bsc}{A list-column of nested data frames with the mean
-#'   and sd of avoidance probability for the basic models (Option 1).}
+#'   and sd of avoidance probability for the basic models (Options 1 and 2).}
 #'   \item{avoid_extended}{A list-column of nested data frames with the
-#'   mean and sd of avoidance probability for the extended models (Options 2, 3
+#'   mean and sd of avoidance probability for the extended models (Options 3
 #'   and 4).}
 #'   \item{fl_type}{A list-column of nested data frames with the flight
 #'   type.}

@@ -16,7 +16,7 @@ mod_pnl_spp_ui <- function(id, spp_label, wf_label, band_mode){
   # Get default parameter values for current species
   par_dflts <- spp_dflts %>%
     dplyr::filter(spp_id == label2id(spp_label)) %>%
-    dplyr::select(body_lt, wing_span, fl_speed, nct_act, avoid_bsc, avoid_ext, fl_type, 
+    dplyr::select(body_lt, wing_span, fl_speed, nct_act, macro_avoid, meso_avoid, avoid_bsc, avoid_ext, fl_type, 
            upwind_fl, prop_crh) %>%
     tidyr::pivot_longer(cols = everything(), names_to = "par_name", values_to = "data") %>%
     tidyr::unnest(data, keep_empty = TRUE) %>%
@@ -29,7 +29,7 @@ mod_pnl_spp_ui <- function(id, spp_label, wf_label, band_mode){
     dplyr::filter(par_name %in% c("body_lt", "wing_span"))
   
   inflight_pars <- par_dflts %>%  
-    dplyr::filter(par_name %in% c("fl_speed", "nct_act", "avoid_bsc", "avoid_ext", "prop_crh"))
+    dplyr::filter(par_name %in% c("fl_speed", "nct_act", "macro_avoid", "meso_avoid", "avoid_bsc", "avoid_ext", "prop_crh"))
   
   
   tagList(
@@ -240,12 +240,12 @@ mod_pnl_spp_server <- function(id, spp_id, tbx_id, spp_tp_id, spp_label, wf_labe
       )
     
     
-    c(inflightpars_iv, c(fl_speed, nct_act, avoid_bsc, avoid_ext, colrisk)) %<-% 
+    c(inflightpars_iv, c(fl_speed, nct_act, macro_avoid, meso_avoid, avoid_bsc, avoid_ext, colrisk)) %<-% 
       mod_prob_inputs_server(
         id = "inflightpars",
         pars_lkp =  dplyr::filter(
           spp_probdist_pars, 
-          par_name %in% c("fl_speed", "nct_act", "avoid_bsc", "avoid_ext", "prop_crh")
+          par_name %in% c("fl_speed", "nct_act",  "macro_avoid", "meso_avoid", "avoid_bsc", "avoid_ext", "prop_crh")
         ),
         band_mode = band_mode,
         plot_fill = spp_colour
@@ -335,6 +335,8 @@ mod_pnl_spp_server <- function(id, spp_id, tbx_id, spp_tp_id, spp_label, wf_labe
           colrisk = colrisk(),
           fl_speed = fl_speed(),
           nct_act = nct_act(),
+          macro_avoid = macro_avoid(),
+          meso_avoid = meso_avoid(),
           avoid_bsc = avoid_bsc(),
           avoid_ext = avoid_ext()
         ),

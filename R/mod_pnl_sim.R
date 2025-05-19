@@ -410,6 +410,8 @@ mod_pnl_sim_server <- function(id, scrm_inputs, band_mode, app_session){
               body_lt = biom_ftrs$body_lt$mean,
               wing_span = biom_ftrs$wing_span$mean,
               flight_type = inflight_ftrs$fltype,
+              macro_avoidance_rate = inflight_ftrs$macro_avoid$mean,
+              meso_avoidance_rate = inflight_ftrs$meso_avoid$mean,
               avoid_rt_basic = inflight_ftrs$avoid_bsc$mean,
               avoid_rt_ext = inflight_ftrs$avoid_ext$mean,
               noct_activity = inflight_ftrs$nct_act$mean,

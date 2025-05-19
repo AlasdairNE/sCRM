@@ -59,6 +59,8 @@ spp_probdist_pars <- tibble::tribble(
  "wing_span",             "Wing Span (m)",    "wngspn",     "tnorm",    #         1,         0.1,
   "fl_speed",        "Flight Speed (m/s)",     "flspd",     "tnorm",    #         1,         0.1,
    "nct_act",   "Nocturnal Activity",    "nctact",      "beta",    #       0.5,         0.1,
+ "macro_avoid",    "Macro-avoidance", "macroavoid",     "beta",
+ "meso_avoid",      "Meso-avoidance", "mesoavoid",      "beta",
  "avoid_bsc",      "Basic Avoidance",  "avoidbsc",      "beta",    #       0.5,         0.1,
  "avoid_ext",   "Extended Avoidance",  "avoidext",      "beta",    #       0.5,         0.1
   "prop_crh",         "Proportion at CRH",      "pcrh",      "beta"
@@ -237,6 +239,14 @@ generate_dflt_spp <- function(spp_id){
     nct_act = data.frame(
       dflt_mean = runif(1, 0.06, 0.2),
       dflt_sd = runif(1, 0.02, 0.1), 
+      ref = NA),
+    macro_avoid = data.frame(
+      dflt_mean = 0, 
+      dflt_sd = 0, 
+      ref = NA),
+    meso_avoid = data.frame(
+      dflt_mean = 0, 
+      dflt_sd = 0, 
       ref = NA),
     avoid_bsc = data.frame(
       dflt_mean = runif(1, 0.90, 0.98), 

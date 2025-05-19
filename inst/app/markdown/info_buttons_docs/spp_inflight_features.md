@@ -11,6 +11,10 @@ point estimates when **Deterministic Mode** is enabled (i.e. only **Mean** is re
 - **Nocturnal Activity**, expressed as a proportion of daytime flight activity
 levels (Beta distributed)
 
+- **Macro-avoidance** rate and **Meso-avoidance** rate, expressing the proportion of
+birds that avoid entering the wind farm (macro) or the proportion that avoid the
+rotor-swept area of the turbines (meso) (Trunc. Normal upper bounded at 1)
+
 - **Basic Avoidance** rate (for Option 1 and 2) and **Extended Avoidance** rate
 (for Option 3 and 4), expressing the probability that a bird flying on a
 collision course with a turbine will take evading action (Beta distributed)
